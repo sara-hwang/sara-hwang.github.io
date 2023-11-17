@@ -26,7 +26,7 @@ function App() {
             around 😄
           </h2>
         </section>
-        <section className="contents" data-scroll-section>
+        {/* <section className="contents" data-scroll-section>
           <h1
             data-scroll
             data-scroll-direction="horizontal"
@@ -41,33 +41,43 @@ function App() {
           >
             That's why I code every day
           </h1>
-        </section>
-        <section id="stick" data-scroll-section className="cookbook">
-          <h1
+        </section> */}
+        <section id="cookbook" data-scroll-section>
+          <p
             data-scroll
+            className="sticky-fadeIn-class"
             data-scroll-speed="5"
             data-scroll-sticky // Attibute that enables the sticky scroll
-            data-scroll-target="#stick"
-            data-scroll-class="spin"
-            data-scroll-repeat="true"
+            data-scroll-target="#cookbook"
+            data-scroll-class="sticky-fadeIn"
+            // data-scroll-repeat="true"
           >
-            Cookbook Web App
-          </h1>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
-          <p>other contents</p>
+            <div>Cookbook</div>
+            <div>Web App</div>
+            <ul>
+              <li>TypeScript</li>
+              <li>JavaScript</li>
+              <li>React</li>
+            </ul>
+          </p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              width: "100%",
+            }}
+          >
+            <div>
+              <img
+                src="cookbook.png"
+                style={{ display: "flex", maxWidth: "100%" }}
+              />
+              <img
+                src="cookbook.png"
+                style={{ display: "flex", maxWidth: "100%" }}
+              />
+            </div>
+          </div>
         </section>
         <section className="footer" data-scroll-section>
           <h1>Don't let this be the end...</h1>

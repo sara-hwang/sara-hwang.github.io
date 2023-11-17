@@ -54,9 +54,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-.App {
-  text-align: center;
-}
 h1{
   font-size: 5rem;
   font-weight: bolder;
@@ -66,27 +63,73 @@ p {
   margin: 1rem;
 }
 section {
+  font-family: "Regular";
+}
+
+.intro {
   height: 100vh;
+  background-color: black;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Regular";
 }
 
-.cookbook {
-  height: fit-content !important
+.project-contents {
+  display: flex;
+  flex-direction: column;
+  /* align-items: right; */
+  justify-content: right !important;
+  /* width: 80%; */
+  /* flex: 0 0 auto */
 }
 
-.intro{
-  background-color: black;
-  font-family: "Regular";
+#cookbook {
+  height: fit-content;
+  color: white;
+  background-color: rgb(71, 14, 64);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.fadeout-class {
+  /* margin-top: 50px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+.fadeOut {
+  opacity: 0;
+  transition: opacity 1s ;
+}
+.sticky-fadeIn-class {
+  font-size: 18;
+  opacity: 0;
+  align-items: start;
+  height: fit-content;
+}
+.sticky-fadeIn {
+  opacity: 1;
+  transition: opacity 1s ;
 }
 .contents {
   background-color: goldenrod;
   font-family: "Regular";
 }
+
+.footer {
+  background-color: peachpuff;
+  color: rgb(83, 51, 0);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #stick {
   background-color: rgb(71, 14, 64);
   display: flex;
@@ -94,10 +137,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.footer {
-  background-color: peachpuff;
-  color: rgb(83, 51, 0);
 }
 
 html.has-scroll-smooth {
@@ -191,15 +230,7 @@ html.has-scroll-dragging {
     opacity: 1;
     transition: opacity 2s ;
 }
-.spin {
-  transform: rotate(-90deg);
-  /* Optional: adjust the positioning if needed */
-  transform-origin: left bottom;
-  white-space: nowrap; /* Prevent the text from wrapping */
-  position: absolute; /* or use relative, fixed, etc. based on your layout */
-  bottom: 0; /* adjust as needed */
-  left: 0; /* adjust as needed */
-}
+
 .contact-buttons {
   display: flex;
   flex-direction: row;
