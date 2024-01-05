@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Black";
-  src: local("Lato-Black"),
-    url("./fonts/Lato-Black.ttf") format("truetype");
+  src: local("Lato-Black"), url("./fonts/Lato-Black.ttf") format("truetype");
 }
 @font-face {
   font-family: "BlackItalic";
@@ -10,8 +9,7 @@
 }
 @font-face {
   font-family: "Bold";
-  src: local("Lato-Bold"),
-    url("./fonts/Lato-Bold.ttf") format("truetype");
+  src: local("Lato-Bold"), url("./fonts/Lato-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "BoldItalic";
@@ -20,13 +18,11 @@
 }
 @font-face {
   font-family: "Italic";
-  src: local("Lato-Italic"),
-    url("./fonts/Lato-Italic.ttf") format("truetype");
+  src: local("Lato-Italic"), url("./fonts/Lato-Italic.ttf") format("truetype");
 }
 @font-face {
   font-family: "Light";
-  src: local("Lato-Light"),
-    url("./fonts/Lato-Light.ttf") format("truetype");
+  src: local("Lato-Light"), url("./fonts/Lato-Light.ttf") format("truetype");
 }
 @font-face {
   font-family: "LightItalic";
@@ -35,13 +31,11 @@
 }
 @font-face {
   font-family: "Regular";
-  src: local("Lato-Regular"),
-    url("./fonts/Lato-Regular.ttf") format("truetype");
+  src: local("Lato-Regular"), url("./fonts/Lato-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Thin";
-  src: local("Lato-Thin"),
-    url("./fonts/Lato-Thin.ttf") format("truetype");
+  src: local("Lato-Thin"), url("./fonts/Lato-Thin.ttf") format("truetype");
 }
 @font-face {
   font-family: "ThinItalic";
@@ -49,49 +43,76 @@
     url("./fonts/Lato-ThinItalic.ttf") format("truetype");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Regular";
 }
-h1{
+h1 {
   font-size: 5rem;
   font-weight: bolder;
+  display: flex;
+}
+h2 {
+  font-size: 3rem;
+  font-weight: bolder;
+  margin: 10px 0;
+  color: darkblue;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: bolder;
+  display: flex;
+  /* margin: 10px 0; */
 }
 p {
-  font-size: 3rem;
-  margin: 1rem;
+  font-size: 1rem;
+  /* margin: 1rem; */
+}
+a {
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+ul {
+  list-style-position: inside;
+}
+li {
+  padding: 2.5px;
 }
 section {
   font-family: "Regular";
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .intro {
-  height: 100vh;
-  background-color: black;
-  color: white;
+  min-height: 100vh;
+  background-color: #abf1ff;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.project-contents {
-  display: flex;
-  flex-direction: column;
-  /* align-items: right; */
-  justify-content: right !important;
-  /* width: 80%; */
-  /* flex: 0 0 auto */
+#projects {
+  min-height: 100vh;
+  color: black;
+  background-color: #abf1ff;
+  padding: 40px 20px;
 }
 
-#cookbook {
-  height: fit-content;
-  color: white;
-  background-color: rgb(71, 14, 64);
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+.project-contents * {
+  padding: 5px;
 }
 .fadeout-class {
   /* margin-top: 50px; */
@@ -103,143 +124,151 @@ section {
 }
 .fadeOut {
   opacity: 0;
-  transition: opacity 1s ;
+  transition: opacity 1s;
 }
-.sticky-fadeIn-class {
-  font-size: 18;
+
+.op-class {
   opacity: 0;
-  align-items: start;
-  height: fit-content;
-}
-.sticky-fadeIn {
-  opacity: 1;
-  transition: opacity 1s ;
-}
-.contents {
-  background-color: goldenrod;
-  font-family: "Regular";
-}
-
-.footer {
-  background-color: peachpuff;
-  color: rgb(83, 51, 0);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#stick {
-  background-color: rgb(71, 14, 64);
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-html.has-scroll-smooth {
-  overflow: hidden; 
-}
-
-html.has-scroll-dragging {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; 
-}
-
-.has-scroll-smooth body {
-  overflow: hidden; 
-}
-
-.has-scroll-smooth [data-scroll-container] {
-  min-height: 100vh; 
-}
-
-[data-scroll-direction="horizontal"] [data-scroll-container] {
-  height: 100vh;
-  display: inline-block;
-  white-space: nowrap; 
-}
-
-[data-scroll-direction="horizontal"] [data-scroll-section] {
-  display: inline-block;
-  vertical-align: top;
-  white-space: nowrap;
-  height: 100%; 
-}
-
-.c-scrollbar {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 11px;
-  height: 100%;
-  transform-origin: center right;
-  transition: transform 0.3s, opacity 0.3s;
-  opacity: 0; 
-}
-
-  .c-scrollbar:hover {
-    transform: scaleX(1.45); 
-}
-
-  .c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
-    opacity: 1; 
-}
-
-[data-scroll-direction="horizontal"] .c-scrollbar {
-    width: 100%;
-    height: 10px;
-    top: auto;
-    bottom: 0;
-    transform: scaleY(1); 
-}
-
-[data-scroll-direction="horizontal"] .c-scrollbar:hover {
-      transform: scaleY(1.3); 
-}
-
-.c-scrollbar_thumb {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: black;
-  opacity: 0.5;
-  width: 7px;
-  border-radius: 10px;
-  margin: 2px;
-  cursor: -webkit-grab;
-  cursor: grab; 
-}
-  .has-scroll-dragging .c-scrollbar_thumb {
-    cursor: -webkit-grabbing;
-    cursor: grabbing; 
-}
-  [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
-    right: auto;
-    bottom: 0; 
-}
-
-.op-class{
-    opacity: 0;
 }
 .fadeIn {
-    opacity: 1;
-    transition: opacity 2s ;
+  opacity: 1;
+  transition: opacity 2s;
 }
 
-.contact-buttons {
+section .air {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+  background-size: 1000px 100px;
+}
+section .air.air1 {
+  animation: wave 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+section .air.air2 {
+  animation: wave2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+section .air.air3 {
+  animation: wave 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+section .air.air4 {
+  animation: wave2 5s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 20px;
+}
+@keyframes wave {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+@keyframes wave2 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
+}
+
+.typewriter {
+  /* background-color: #fff; */
+  min-width: 280px;
+  /* padding: 1em 2em 1em 1.5em; */
+  border-bottom: solid 2px black;
+  /* border-radius: 2.8em; */
+  /* box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.25); */
+  /* margin: 2em; */
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
 }
 
-.MuiIconButton-root {
-  transform: scale(3);
-  margin: 40px !important;
-  padding: 5px !important;
+.typewriter p {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 500;
+  width: 0;
+  max-width: max-content;
+  overflow: hidden;
+  border-right: 0.05em solid #464545; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0; /* Gives that scrolling effect as the typing happens */
+}
+
+.text {
+  height: 2rem;
+  overflow: hidden;
+}
+
+.wrapper {
+  animation: slide-text 20s steps(1, end) infinite;
+}
+
+.wrapper p {
+  margin: 1rem 0;
+  animation: typing-erase 5s steps(80, end) infinite,
+    blink-caret 0.5s step-end infinite;
+}
+
+/* The type and erase effect */
+@keyframes typing-erase {
+  0% {
+    width: 0;
+  }
+  50%,
+  70% {
+    width: 100%;
+  }
+  90%,
+  100% {
+    width: 0;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: gray;
+  }
+}
+
+@keyframes slide-text {
+  0%,
+  25% {
+    transform: translateY(-1rem);
+  }
+  25%,
+  50% {
+    transform: translateY(-4.5rem);
+  }
+  50%,
+  75% {
+    transform: translateY(-8rem);
+  }
+  75%,
+  100% {
+    transform: translateY(8rem);
+  }
 }

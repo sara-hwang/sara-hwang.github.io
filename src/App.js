@@ -2,111 +2,151 @@ import "./App.css";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRef } from "react";
 import { GitHub, LinkedIn, MailOutline } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
+import { Box, Grid, IconButton } from "@mui/material";
 
 function App() {
-  const ref = useRef(null);
-
-  const options = {
-    smooth: true,
-  };
-
   return (
-    <LocomotiveScrollProvider options={options} containerRef={ref}>
-      <main data-scroll-container ref={ref}>
-        <section
-          className="intro"
-          data-scroll //This attribute makes this section an independent scrollable container
-          data-scroll-speed="4"
-          data-scroll-section
+    <Box>
+      <div
+        style={{
+          position: "fixed",
+          display: "flex",
+          top: 0,
+          width: "100%",
+          height: "fit-content",
+          backgroundColor: "#abf1ff",
+          alignItems: "center",
+          zIndex: 1,
+        }}
+      >
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <IconButton
+          disableRipple
+          href="mailto:shw9925@gmail.com"
+          target="_blank"
         >
-          <h1> 👋 Hi! I'm Sara</h1>
-          <h2>
-            Nice to meet you, please make yourself comfortable as you look
-            around 😄
-          </h2>
-        </section>
-        {/* <section className="contents" data-scroll-section>
-          <h1
-            data-scroll
-            data-scroll-direction="horizontal"
-            data-scroll-speed="9"
-          >
-            I Love React
-          </h1>
-          <h1
-            data-scroll
-            data-scroll-direction="vertical"
-            data-scroll-speed="9" // Values provided here affect the animations
-          >
-            That's why I code every day
-          </h1>
-        </section> */}
-        <section id="cookbook" data-scroll-section>
-          <p
-            data-scroll
-            className="sticky-fadeIn-class"
-            data-scroll-speed="5"
-            data-scroll-sticky // Attibute that enables the sticky scroll
-            data-scroll-target="#cookbook"
-            data-scroll-class="sticky-fadeIn"
-            // data-scroll-repeat="true"
-          >
-            <div>Cookbook</div>
-            <div>Web App</div>
-            <ul>
-              <li>TypeScript</li>
-              <li>JavaScript</li>
-              <li>React</li>
-            </ul>
-          </p>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              width: "100%",
-            }}
-          >
-            <div>
-              <img
-                src="cookbook.png"
-                style={{ display: "flex", maxWidth: "100%" }}
-              />
-              <img
-                src="cookbook.png"
-                style={{ display: "flex", maxWidth: "100%" }}
-              />
-            </div>
-          </div>
-        </section>
-        <section className="footer" data-scroll-section>
-          <h1>Don't let this be the end...</h1>
-          <h1
-            className="op-class"
-            data-scroll
-            data-scroll-class="fadeIn"
-            data-scroll-repeat="true"
-            data-scroll-speed="2"
-          >
-            Drop me a line!
-            <div className="contact-buttons">
-              <IconButton href="mailto:shw9925@gmail.com" target="_blank">
-                <MailOutline sx={{ color: "rgb(83, 51, 0)" }} />
-              </IconButton>
-              <IconButton
-                href="https://linkedin.com/in/sara-hwang1/"
-                target="_blank"
+          <MailOutline sx={{ color: "black" }} />
+        </IconButton>
+        <IconButton
+          disableRipple
+          href="https://linkedin.com/in/sara-hwang1/"
+          target="_blank"
+        >
+          <LinkedIn sx={{ color: "black" }} />
+        </IconButton>
+        <IconButton
+          disableRipple
+          href="https://github.com/sara-hwang/"
+          target="_blank"
+        >
+          <GitHub sx={{ color: "black" }} />
+        </IconButton>
+      </div>
+      <section id="about" className="intro">
+        <Grid>
+          <Grid container direction="row" spacing={5}>
+            <Grid item container direction="column" spacing={1} xs>
+              <Grid item>
+                <h1>👋 Hi! I'm Sara,</h1>
+              </Grid>
+              <Grid item>
+                <h3>a software developer from Vancouver, BC</h3>
+              </Grid>
+              <Grid item container direction="row" spacing={1}>
+                <Grid item>
+                  <h3> with a passion for </h3>
+                </Grid>
+                <Grid item>
+                  <div class="typewriter">
+                    <div class="text">
+                      <div class="wrapper">
+                        <p>solving problems</p>
+                        <p>learning new skills</p>
+                        <p>elevating UX</p>
+                      </div>
+                    </div>
+                  </div>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <img src="picture.png" width="200px" />
+            </Grid>
+          </Grid>
+        </Grid>
+      </section>
+      <section id="projects">
+        <Grid>
+          <Grid container>
+            <Grid item xs={12}>
+              <h2>Cookbook </h2>
+            </Grid>
+            <Grid item container direction="row">
+              <Grid
+                item
+                container
+                direction="column"
+                xs={12}
+                md={4}
+                spacing={2}
               >
-                <LinkedIn sx={{ color: "rgb(83, 51, 0)" }} />
-              </IconButton>
-              <IconButton href="https://github.com/sara-hwang/" target="_blank">
-                <GitHub sx={{ color: "rgb(83, 51, 0)" }} />
-              </IconButton>
-            </div>
-          </h1>
-        </section>
-      </main>
-    </LocomotiveScrollProvider>
+                <Grid item>
+                  <h4>
+                    Hosted using AWS and Netlify at
+                    <a href="https://susanscookbook.netlify.app">
+                      <u>www.susanscookbook.netlify.app</u>
+                    </a>
+                  </h4>
+                </Grid>
+                <Grid item>
+                  <h4>Securely encrypted with HTTPS using Let's Encrypt</h4>
+                </Grid>
+                <Grid item>
+                  <h4>Tech Stack:</h4>
+                  <ul>
+                    <li>Front-end: TypeScript and React</li>
+                    <li>Back-end: JavaScript and Express</li>
+                    <li>Database: MongoDB</li>
+                  </ul>
+                </Grid>
+                <Grid item>
+                  <h4>APIs:</h4>
+                  <ul>
+                    <li>Imgur</li>
+                    <li>Food Data Central</li>
+                  </ul>
+                </Grid>
+                <Grid item>
+                  <h4>Libraries:</h4>
+                  <ul>
+                    <li>Formik</li>
+                    <li>MaterialUI</li>
+                    <li>React Auth Kit</li>
+                    <li>Redux Toolkit</li>
+                    <li>Splide.js</li>
+                    <li>Yup</li>
+                  </ul>
+                </Grid>
+              </Grid>
+              <Grid item xs>
+                <img
+                  src="cookbook.png"
+                  style={{ display: "flex", maxWidth: "100%" }}
+                />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </section>
+      <section style={{ position: "sticky", bottom: 0 }}>
+        <div class="air air1"></div>
+        <div class="air air2"></div>
+        <div class="air air3"></div>
+        <div class="air air4"></div>
+      </section>
+    </Box>
   );
 }
 
