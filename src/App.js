@@ -6,7 +6,7 @@ import { Box, Grid, IconButton } from "@mui/material";
 
 function App() {
   return (
-    <Box>
+    <div className="mandatory-scroll-snap">
       <div
         style={{
           position: "fixed",
@@ -140,13 +140,13 @@ function App() {
           </Grid>
         </Grid>
       </section>
-      <section style={{ position: "sticky", bottom: 0 }}>
+      <div style={{ position: "sticky", bottom: 0 }}>
         <div class="air air1"></div>
         <div class="air air2"></div>
         <div class="air air3"></div>
         <div class="air air4"></div>
-      </section>
-    </Box>
+      </div>
+    </div>
   );
 }
 
